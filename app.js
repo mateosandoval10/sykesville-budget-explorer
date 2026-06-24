@@ -89,8 +89,11 @@
     renderSummary();
     renderBreakdown("rev", b.revenues.categories, b.revenues.total, "revenue");
     renderBreakdown("exp", b.expenditures.groups, b.expenditures.total, "spending");
+    renderServices();
     renderTrends();
     renderAsk();
+    renderCommonQuestions();
+    wirePrint();
     renderCalculator();
     renderCapital();
     renderReserves();
@@ -118,6 +121,52 @@
       `<p><strong>Your elected officials:</strong> Mayor ${escapeHtml(g.mayor)}; Council: ${council}.</p>` +
       `<p class="muted" style="margin-bottom:16px">${escapeHtml(g.engagement)}</p>` +
       `<a class="civic-btn" href="${escapeHtml(g.website)}" target="_blank" rel="noopener">Visit the Town website →</a>`;
+  }
+
+  /* ---------- services you use ---------- */
+  function renderServices() {
+    const svc = DATA.intelligence.services;
+    if (!svc) return;
+    const groups = DATA.budget.expenditures.groups;
+    const total = DATA.budget.expenditures.total;
+    const grid = $("#svc-grid");
+    grid.innerHTML = "";
+    svc
+      .map((s) => {
+        const g = groups.find((x) => x.key === s.group_key);
+        return Object.assign({}, s, { amount: g ? g.amount : 0 });
+      })
+      .sort((a, b) => b.amount - a.amount)
+      .forEach((s) => {
+        const card = el("div", "svc-card");
+        card.innerHTML =
+          `<div class="svc-top"><span class="svc-icon" aria-hidden="true">${s.icon}</span>` +
+          `<span class="svc-amt">${fmtShort(s.amount)}</span></div>` +
+          `<div class="svc-name">${escapeHtml(s.name)}</div>` +
+          `<div class="svc-pct">${fmtPct(s.amount, total)} of spending</div>` +
+          `<p class="svc-detail">${escapeHtml(s.detail)}</p>`;
+        grid.appendChild(card);
+      });
+  }
+
+  /* ---------- common questions (browseable FAQ) ---------- */
+  function renderCommonQuestions() {
+    const list = $("#common-q-list");
+    if (!list) return;
+    list.innerHTML = "";
+    DATA.intelligence.faq.forEach((item) => {
+      const d = el("details", "common-q-item");
+      d.innerHTML =
+        `<summary>${escapeHtml(item.question)}</summary>` +
+        `<div class="cq-a"><p>${escapeHtml(item.answer)}</p>${srcLine(item.cites)}</div>`;
+      list.appendChild(d);
+    });
+  }
+
+  /* ---------- print / save as PDF ---------- */
+  function wirePrint() {
+    const btn = $("#print-btn");
+    if (btn) btn.addEventListener("click", () => window.print());
   }
 
   /* ---------- hero ---------- */

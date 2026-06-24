@@ -1,0 +1,3 @@
+# Tooling for the data pipeline and asset generation (the web app itself needs nothing).
+pdfplumber>=0.11   # scripts/extract_budget.py — parse the budget PDF
+pillow>=10.0       # scripts/make_social_card.py — generate the social preview image

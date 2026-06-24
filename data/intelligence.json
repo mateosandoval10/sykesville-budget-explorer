@@ -20,6 +20,15 @@
     "The Town has no long-term debt and a fully funded $1 million rainy-day reserve."
   ],
 
+  "services": [
+    { "icon": "🚓", "name": "Police & public safety", "group_key": "public_safety", "detail": "Sykesville's own department — ten officers, a chief, and an admin." },
+    { "icon": "🗑️", "name": "Trash, streets & public works", "group_key": "public_works", "detail": "Weekly curbside trash and recycling, road repair, snow, and stormwater." },
+    { "icon": "🏢", "name": "Running the Town", "group_key": "general_government", "detail": "Town Hall staff, the Mayor & Council, and the legal and professional services that keep things working." },
+    { "icon": "🩺", "name": "Employee benefits", "group_key": "employee_benefits", "detail": "Health care and retirement for the people who police, plow, and run the Town." },
+    { "icon": "🏛️", "name": "Culture & heritage", "group_key": "culture_heritage", "detail": "The Gate House Museum, the historic Post Office / Visitor Center, and downtown landmarks." },
+    { "icon": "🌳", "name": "Parks & recreation", "group_key": "parks_recreation", "detail": "Millard Cooper Park, the summer splash pad, and Music in the Park." }
+  ],
+
   "faq": [
     {
       "id": "police_vs_parks",

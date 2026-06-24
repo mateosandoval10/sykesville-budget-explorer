@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sykesville Budget Explorer — FY2026</title>
   <meta name="description" content="An interactive, plain-English look at where the Town of Sykesville's money comes from and where it goes — built from the official FY2026 budget." />
+
+  <!-- Social sharing (so a link posted to a residents' group shows a clean preview) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sykesville Budget Explorer" />
+  <meta property="og:description" content="See where the Town of Sykesville's $6.9M budget comes from and where it goes — in plain English. Ask questions, find your share, and read it in two minutes." />
+  <meta property="og:url" content="https://mateosandoval10.github.io/sykesville-budget-explorer/" />
+  <meta property="og:image" content="https://mateosandoval10.github.io/sykesville-budget-explorer/assets/social-card.png" />
+  <meta property="og:image:alt" content="Sykesville Budget Explorer — FY2026 town budget at a glance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sykesville Budget Explorer" />
+  <meta name="twitter:description" content="Where the Town of Sykesville's $6.9M budget comes from and where it goes — in plain English." />
+  <meta name="twitter:image" content="https://mateosandoval10.github.io/sykesville-budget-explorer/assets/social-card.png" />
+
   <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🏛️&lt;/text&gt;&lt;/svg&gt;" />
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -22,6 +35,7 @@
       </div>
       <div class="header-meta">
         <span class="badge" id="status-badge">Loading…</span>
+        <button class="print-btn" id="print-btn" type="button" title="Print or save a one-page summary as PDF">🖨️ Print / PDF</button>
       </div>
     </div>
   </header>
@@ -59,6 +73,10 @@
       </div>
       <div id="ask-answer" class="ask-answer" hidden aria-live="polite" aria-atomic="true"></div>
       <div id="ask-suggestions" class="suggestions"><!-- chips injected --></div>
+      <details class="common-q" id="common-q">
+        <summary>Or browse all common questions</summary>
+        <div id="common-q-list" class="common-q-list"><!-- Q&A injected --></div>
+      </details>
     </section>
 
     <!-- REVENUE -->
@@ -81,6 +99,13 @@
         <div id="exp-legend" class="legend"><!-- legend injected --></div>
       </div>
       <div id="exp-detail" class="detail" hidden></div>
+    </section>
+
+    <!-- SERVICES YOU USE -->
+    <section class="card" aria-labelledby="svc-h">
+      <h2 id="svc-h">🤝 Services you actually use</h2>
+      <p class="muted">The same spending, grouped by the everyday services it pays for.</p>
+      <div id="svc-grid" class="svc-grid"><!-- services injected --></div>
     </section>
 
     <!-- TRENDS -->

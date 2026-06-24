@@ -17,12 +17,18 @@ It's civic infrastructure designed to **cost the Town nothing to run** and to ke
 
 ## What it does
 
+- **The budget in plain terms** — a four-line summary up top so anyone gets the gist in 15 seconds.
 - **Where the money comes from / goes** — interactive donut charts with click-to-expand detail. The opaque "Other Sources" line that's 39% of revenue? Broken down so you can see it's mostly one-time federal and grant money.
-- **💬 Ask the Budget** — type a question in plain English ("How much do we spend on police vs. parks?") and get an answer grounded in the actual budget, instantly and for free.
-- **Where does *my* tax dollar go?** — enter your home's assessed value to see your annual town property tax and how it splits across services.
-- **Major projects** — every capital project this year, with who's paying for each (grant, federal funds, reserves, or local taxes).
+- **🤝 Services you actually use** — the same spending, regrouped by the everyday services it pays for (police, trash, parks, the museum…).
+- **💬 Ask the Budget** — type a question in plain English ("How much do we spend on police vs. parks?") and get an answer grounded in the actual budget, instantly and for free. Plus a browseable list of common questions.
+- **Where does *my* tax dollar go?** — enter your home's assessed value (with a link to look it up on Maryland SDAT) to see your annual town property tax and how it splits across services.
+- **Year-over-year** — how this year's total and tax rate compare to last year, in context.
+- **Major projects** — every capital project this year, *where* it is, and who's paying for it (grant, federal funds, reserves, or local taxes).
 - **Reserves & financial health** — the Town's savings and its zero long-term debt.
+- **🗣️ Have your say** — the real Mayor & Council, how the budget gets adopted, and how to weigh in.
 - **Plain-English glossary** — hover any underlined term ("Highway User Revenue," "Constant Yield Rate") for a jargon-free explanation.
+- **Print / Save as PDF** and a shareable social-preview card — so it works on paper and looks clean when posted to a neighborhood group.
+- **Accessible by design** — screen-reader announcements, reduced-motion support, keyboard navigation.
 
 ## How the AI works — and why it's free
 
@@ -73,8 +79,9 @@ To re-derive the summary figures from the source PDF:
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install pdfplumber
+pip install -r requirements.txt
 python3 scripts/extract_budget.py        # prints integrity checks, writes data/budget.summary.json
+python3 scripts/make_social_card.py      # regenerates assets/social-card.png from the budget data
 ```
 
 ## Deploy

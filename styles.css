@@ -260,6 +260,47 @@ button:hover { background: var(--primary-dark); }
   * { transition: none !important; animation: none !important; }
 }
 
+/* Print button */
+.print-btn { background: rgba(255, 255, 255, .15); color: #fff; border: 1px solid rgba(255, 255, 255, .35); border-radius: 8px; padding: 7px 12px; font-size: .85rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.print-btn:hover { background: rgba(255, 255, 255, .28); }
+
+/* Services you actually use */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.svc-card { border: 1px solid var(--line); border-radius: 14px; padding: 18px; background: #fff; }
+.svc-top { display: flex; align-items: center; justify-content: space-between; }
+.svc-icon { font-size: 1.7rem; line-height: 1; }
+.svc-amt { font-weight: 800; font-size: 1.25rem; color: var(--primary-dark); font-variant-numeric: tabular-nums; }
+.svc-name { font-weight: 700; margin-top: 10px; }
+.svc-pct { color: var(--muted); font-size: .85rem; margin-top: 2px; }
+.svc-detail { font-size: .92rem; margin: 10px 0 0; line-height: 1.45; }
+@media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 520px) { .svc-grid { grid-template-columns: 1fr; } }
+
+/* Common questions (browseable FAQ) */
+.common-q { margin-top: 16px; border-top: 1px solid var(--line); padding-top: 14px; }
+.common-q > summary { cursor: pointer; font-weight: 600; color: var(--primary); list-style: none; }
+.common-q > summary::-webkit-details-marker { display: none; }
+.common-q > summary::before { content: "▸ "; }
+.common-q[open] > summary::before { content: "▾ "; }
+.common-q-list { margin-top: 12px; display: grid; gap: 8px; }
+.common-q-item { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; background: #fff; }
+.common-q-item > summary { cursor: pointer; font-weight: 600; }
+.cq-a { margin-top: 8px; }
+.cq-a p { margin: 0 0 6px; }
+
+/* Print / Save-as-PDF: a clean one-pager */
+@media print {
+  .site-header { background: none !important; color: #000; border-bottom: 1px solid #ccc; }
+  h1, .stat .num, a { color: #000 !important; }
+  a { text-decoration: none; }
+  .brand-sub, .badge, .print-btn, .skip-link, .live-toggle, .ask-form, .live-panel,
+  #ask-suggestions, .common-q, #ask-answer, .calc-form, .calc-help, .donut-wrap,
+  .legend, .detail, .civic-btn, #tooltip { display: none !important; }
+  body { background: #fff; }
+  main.wrap { max-width: none; }
+  .card { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; page-break-inside: avoid; }
+}
+
 /* Responsive */
 @media (max-width: 820px) {
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
