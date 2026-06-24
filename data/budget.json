@@ -27,11 +27,30 @@
     "capital_and_one_time": 2497064,
     "property_tax_rate": 0.32,
     "property_tax_rate_unit": "per $100 of assessed value",
-    "property_tax_rate_prior": 0.33,
+    "property_tax_rate_prior": 0.32,
+    "property_tax_rate_fy24": 0.33,
+    "property_tax_rate_note": "Held at $0.32 since FY2025 — cut 1¢ from $0.33.",
     "constant_yield_rate": 0.2996,
     "assessable_base": 624481697,
     "long_term_debt": 0,
     "balanced": true
+  },
+
+  "trends": {
+    "budget_totals": [
+      { "year": "FY2025", "label": "FY2025 (revised)", "total": 8972071 },
+      { "year": "FY2026", "label": "FY2026 (draft)", "total": 6872516 }
+    ],
+    "tax_rate_history": [
+      { "year": "FY2024", "rate": 0.33 },
+      { "year": "FY2025", "rate": 0.32 },
+      { "year": "FY2026", "rate": 0.32 }
+    ],
+    "notes": [
+      "The $2.1M drop is almost entirely fewer one-time capital projects — day-to-day operating costs stayed essentially flat.",
+      "The property tax rate has held at $0.32 since FY2025, when it was cut a penny from $0.33.",
+      "Income tax is budgeted conservatively at $1,244,593 — below the FY2024 actual of $1,292,496 — to cushion against a possible downturn."
+    ]
   },
 
   "reserves": {

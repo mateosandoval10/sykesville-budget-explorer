@@ -88,6 +88,7 @@
     renderHero();
     renderBreakdown("rev", b.revenues.categories, b.revenues.total, "revenue");
     renderBreakdown("exp", b.expenditures.groups, b.expenditures.total, "spending");
+    renderTrends();
     renderAsk();
     renderCalculator();
     renderCapital();
@@ -106,7 +107,7 @@
     const stats = [
       { num: fmtShort(h.total_budget), label: "Total FY2026 budget", sub: (h.change_pct * 100).toFixed(0) + "% vs. last year" },
       { num: "$" + Math.round(perResident).toLocaleString(), label: "Per resident", sub: "$" + Math.round(perResidentOp).toLocaleString() + " operating" },
-      { num: "$" + h.property_tax_rate.toFixed(2), label: "Property tax rate (per $100)", sub: "was $" + h.property_tax_rate_prior.toFixed(2) + " in FY25" },
+      { num: "$" + h.property_tax_rate.toFixed(2), label: "Property tax rate (per $100)", sub: h.property_tax_rate_note || "unchanged from FY25" },
       { num: fmtFull(h.long_term_debt), label: "Long-term debt", sub: "fully funded reserves", danger: true }
     ];
     const grid = $("#stat-grid");
@@ -189,6 +190,37 @@
       container.appendChild(row);
     });
     container.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  /* ---------- trends / year-over-year ---------- */
+  function renderTrends() {
+    const t = DATA.budget.trends;
+    if (!t) return;
+    const wrap = $("#trend-content");
+    const max = Math.max(...t.budget_totals.map((d) => d.total));
+
+    let totals = '<div class="trend-block"><h3>Total budget</h3>';
+    t.budget_totals.forEach((d) => {
+      totals +=
+        `<div class="bar-row"><div class="bar-head"><span class="bn">${escapeHtml(d.label)}</span>` +
+        `<span class="ba">${fmtFull(d.total)}</span></div>` +
+        `<div class="bar-track"><div class="bar-fill" style="width:${(100 * d.total / max).toFixed(1)}%;background:var(--c1)"></div></div></div>`;
+    });
+    const first = t.budget_totals[0].total, last = t.budget_totals[t.budget_totals.length - 1].total;
+    const pc = ((last - first) / first * 100).toFixed(0);
+    totals += `<p class="bar-note">${pc}% change — ${fmtShort(Math.abs(last - first))} ${last < first ? "less" : "more"} than the year before.</p></div>`;
+
+    let rates = '<div class="trend-block"><h3>Property tax rate (per $100)</h3><div class="rate-history">';
+    t.tax_rate_history.forEach((d) => {
+      rates += `<div class="rate-pill"><span class="ry">${escapeHtml(d.year)}</span><span class="rr">$${d.rate.toFixed(2)}</span></div>`;
+    });
+    rates += "</div></div>";
+
+    let notes = '<ul class="facts-list trend-notes">';
+    t.notes.forEach((n) => { notes += `<li>${escapeHtml(n)}</li>`; });
+    notes += "</ul>";
+
+    wrap.innerHTML = `<div class="trend-grid">${totals}${rates}</div>${notes}`;
   }
 
   /* ---------- Ask the Budget ---------- */

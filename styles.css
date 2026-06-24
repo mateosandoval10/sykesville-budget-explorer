@@ -135,6 +135,16 @@ body {
   color: var(--warn); background: #fbeee4; border-radius: 4px; padding: 1px 6px; margin-left: 6px; vertical-align: middle;
 }
 
+/* Trends / year-over-year */
+.trend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 10px; }
+.trend-block h3 { margin: 0 0 12px; font-size: 1rem; }
+.rate-history { display: flex; gap: 10px; flex-wrap: wrap; }
+.rate-pill { border: 1px solid var(--line); border-radius: 10px; padding: 10px 16px; text-align: center; background: #fff; }
+.rate-pill .ry { display: block; font-size: .75rem; color: var(--muted); }
+.rate-pill .rr { display: block; font-weight: 700; font-size: 1.15rem; color: var(--primary-dark); font-variant-numeric: tabular-nums; }
+.trend-notes { margin-top: 8px; }
+@media (max-width: 820px) { .trend-grid { grid-template-columns: 1fr; } }
+
 /* Ask the Budget */
 .ask-card { border-color: #cfe0ee; }
 .ask-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
