@@ -13,6 +13,13 @@
     "taxes_and_reserves": "The property tax rate is $0.32 per $100 of assessed value — unchanged after a 1-cent cut the year before. It sits just above the state's Constant Yield Rate of $0.2996, so the Town collects a little more than 'no real increase.' On the savings side, Sykesville is in strong shape: a fully funded $1 million rainy-day reserve, a $250,000 repaving reserve, and no long-term debt at all."
   },
 
+  "resident_summary": [
+    "Sykesville plans to spend $6.87 million in FY2026 — about $1,592 per resident — and the budget is balanced.",
+    "Your town property tax rate is unchanged at $0.32 per $100. For a $400,000 home, that's about $1,280 a year to the Town.",
+    "The biggest everyday costs are running the Town, the police, and employee benefits. The single biggest project — $1.2M on Main Street — is paid for with federal money, not your taxes.",
+    "The Town has no long-term debt and a fully funded $1 million rainy-day reserve."
+  ],
+
   "faq": [
     {
       "id": "police_vs_parks",

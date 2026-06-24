@@ -221,16 +221,26 @@
   },
 
   "capital_projects": [
-    { "name": "Oklahoma Avenue / Main Street Improvements", "amount": 1200000, "category": "Streets & Downtown", "funding": "Federal Recovery Funds (ARPA/SLFRF)" },
-    { "name": "Town House Lawn (engineering & construction)", "amount": 250000, "category": "General Government", "funding": "Strategic Demolition / Community Legacy grant" },
-    { "name": "714 Sandosky Lot (engineering)", "amount": 200000, "category": "General Government", "funding": "Strategic Demolition / Community Legacy grant" },
-    { "name": "B.F. Shriver Cannery — planning (South Branch Park)", "amount": 200000, "category": "Parks", "funding": "State Capital Grant" },
-    { "name": "Cooper Park Improvements", "amount": 150000, "category": "Parks", "funding": "Program Open Space grant" },
-    { "name": "Norwood Avenue Stormwater", "amount": 100000, "category": "Public Works", "funding": "Capital Reserve" },
-    { "name": "Road Resurfacing", "amount": 307064, "category": "Streets & Roads", "funding": "Highway User Revenue" },
-    { "name": "New Police Cruiser", "amount": 70000, "category": "Public Safety", "funding": "Impact Fees" },
-    { "name": "Sidewalks", "amount": 20000, "category": "Streets & Roads", "funding": "Highway User Revenue" }
+    { "name": "Oklahoma Avenue / Main Street Improvements", "amount": 1200000, "category": "Streets & Downtown", "location": "Main Street / Oklahoma Ave", "funding": "Federal Recovery Funds (ARPA/SLFRF)" },
+    { "name": "Town House Lawn (engineering & construction)", "amount": 250000, "category": "General Government", "location": "Town House, Downtown", "funding": "Strategic Demolition / Community Legacy grant" },
+    { "name": "714 Sandosky Lot (engineering)", "amount": 200000, "category": "General Government", "location": "Sandosky Lot, Downtown", "funding": "Strategic Demolition / Community Legacy grant" },
+    { "name": "B.F. Shriver Cannery — planning", "amount": 200000, "category": "Parks", "location": "South Branch Park", "funding": "State Capital Grant" },
+    { "name": "Cooper Park Improvements", "amount": 150000, "category": "Parks", "location": "Millard Cooper Park", "funding": "Program Open Space grant" },
+    { "name": "Norwood Avenue Stormwater", "amount": 100000, "category": "Public Works", "location": "Norwood Avenue", "funding": "Capital Reserve" },
+    { "name": "Road Resurfacing", "amount": 307064, "category": "Streets & Roads", "location": "Townwide", "funding": "Highway User Revenue" },
+    { "name": "New Police Cruiser", "amount": 70000, "category": "Public Safety", "location": "Police Department", "funding": "Impact Fees" },
+    { "name": "Sidewalks", "amount": 20000, "category": "Streets & Roads", "location": "Townwide", "funding": "Highway User Revenue" }
   ],
+
+  "town_government": {
+    "mayor": "Stacy Link",
+    "council_president": "Anna Carter",
+    "council": ["Mark Dyer", "Alan Grasley", "Elizabeth Guroff", "Leo Keenan", "Jeremiah Schofield"],
+    "town_manager": "Joe Cosentini",
+    "website": "https://www.townofsykesville.gov",
+    "how_adopted": "The budget is proposed by the Town Manager and adopted by the Mayor and Town Council by ordinance, after public meetings where residents can comment.",
+    "engagement": "Town budgets are reviewed and adopted each spring. Check the Town website for the current meeting schedule and how to share your views before the budget is finalized."
+  },
 
   "facts": [
     "The Town carries zero long-term debt.",

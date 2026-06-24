@@ -86,6 +86,7 @@
     $("#source-link").href = b.meta.source.url;
 
     renderHero();
+    renderSummary();
     renderBreakdown("rev", b.revenues.categories, b.revenues.total, "revenue");
     renderBreakdown("exp", b.expenditures.groups, b.expenditures.total, "spending");
     renderTrends();
@@ -94,7 +95,29 @@
     renderCapital();
     renderReserves();
     renderFacts();
+    renderCivic();
     wireTooltips();
+  }
+
+  /* ---------- plain-terms summary ---------- */
+  function renderSummary() {
+    const s = DATA.intelligence.resident_summary;
+    if (!s) return;
+    const ul = $("#summary-list");
+    ul.innerHTML = "";
+    s.forEach((x) => ul.appendChild(el("li", null, escapeHtml(x))));
+  }
+
+  /* ---------- have your say (civic engagement) ---------- */
+  function renderCivic() {
+    const g = DATA.budget.town_government;
+    if (!g) return;
+    const council = [escapeHtml(g.council_president) + " (President)"].concat(g.council.map(escapeHtml)).join(", ");
+    $("#civic-content").innerHTML =
+      `<p>${escapeHtml(g.how_adopted)}</p>` +
+      `<p><strong>Your elected officials:</strong> Mayor ${escapeHtml(g.mayor)}; Council: ${council}.</p>` +
+      `<p class="muted" style="margin-bottom:16px">${escapeHtml(g.engagement)}</p>` +
+      `<a class="civic-btn" href="${escapeHtml(g.website)}" target="_blank" rel="noopener">Visit the Town website →</a>`;
   }
 
   /* ---------- hero ---------- */
@@ -413,7 +436,7 @@
       item.innerHTML =
         `<span class="cn">${escapeHtml(p.name)}</span>` +
         `<span class="ca">${fmtFull(p.amount)}</span>` +
-        `<span class="cf">${escapeHtml(p.category)} · <span class="cap-fund-tag">${escapeHtml(p.funding)}</span></span>`;
+        `<span class="cf">📍 ${escapeHtml(p.location)} · ${escapeHtml(p.category)} · <span class="cap-fund-tag">${escapeHtml(p.funding)}</span></span>`;
       list.appendChild(item);
     });
   }
@@ -462,6 +485,8 @@
     document.addEventListener("mouseout", (e) => { if (e.target.classList && e.target.classList.contains("gloss")) hide(); });
     document.addEventListener("focusin", (e) => { if (e.target.classList && e.target.classList.contains("gloss")) show(e); });
     document.addEventListener("focusout", (e) => { if (e.target.classList && e.target.classList.contains("gloss")) hide(); });
+    window.addEventListener("scroll", hide, { passive: true });
+    window.addEventListener("resize", hide, { passive: true });
   }
 
   /* ---------- go ---------- */

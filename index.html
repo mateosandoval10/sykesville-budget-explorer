@@ -35,6 +35,12 @@
       <p class="hero-note" id="hero-note"></p>
     </section>
 
+    <!-- PLAIN-TERMS SUMMARY -->
+    <section class="card summary-card" aria-labelledby="sum-h">
+      <h2 id="sum-h">🧭 The budget in plain terms</h2>
+      <ul id="summary-list" class="summary-list"><!-- summary injected --></ul>
+    </section>
+
     <!-- ASK THE BUDGET -->
     <section class="card ask-card" aria-labelledby="ask-h">
       <div class="ask-head">
@@ -51,7 +57,7 @@
         <input id="api-key" type="password" placeholder="sk-ant-…" autocomplete="off" />
         <p class="micro">Leave this off to use the free, pre-built answers. With a key, questions are answered live by Claude, grounded in this budget. <a href="https://console.anthropic.com/" target="_blank" rel="noopener">Get a key →</a></p>
       </div>
-      <div id="ask-answer" class="ask-answer" hidden></div>
+      <div id="ask-answer" class="ask-answer" hidden aria-live="polite" aria-atomic="true"></div>
       <div id="ask-suggestions" class="suggestions"><!-- chips injected --></div>
     </section>
 
@@ -96,6 +102,7 @@
         </div>
         <button type="submit">Calculate</button>
       </form>
+      <p class="calc-help micro">Don't know your assessment? Look it up free on the <a href="https://sdat.dat.maryland.gov/RealProperty/" target="_blank" rel="noopener">Maryland SDAT property search</a> (choose County: Carroll).</p>
       <div id="calc-result" class="calc-result"><!-- result injected --></div>
     </section>
 
@@ -116,6 +123,12 @@
     <section class="card facts-card" aria-labelledby="facts-h">
       <h2 id="facts-h">Good to know</h2>
       <ul id="facts-list" class="facts-list"><!-- facts injected --></ul>
+    </section>
+
+    <!-- HAVE YOUR SAY -->
+    <section class="card civic-card" aria-labelledby="civic-h">
+      <h2 id="civic-h">🗣️ Have your say</h2>
+      <div id="civic-content" class="civic-content"><!-- civic injected --></div>
     </section>
 
   </main>
