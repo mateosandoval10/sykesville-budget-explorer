@@ -54,10 +54,11 @@
   /* ---------- load ---------- */
   async function load() {
     try {
+      const opt = { cache: "no-store" }; // always serve current budget data; tiny files
       const [budget, intelligence, glossary] = await Promise.all([
-        fetch("data/budget.json").then(okJson),
-        fetch("data/intelligence.json").then(okJson),
-        fetch("data/glossary.json").then(okJson)
+        fetch("data/budget.json", opt).then(okJson),
+        fetch("data/intelligence.json", opt).then(okJson),
+        fetch("data/glossary.json", opt).then(okJson)
       ]);
       DATA = { budget, intelligence, glossary };
       render();
@@ -222,6 +223,11 @@
     });
   }
 
+  // filler words that shouldn't count as evidence of a topic match
+  const STOP = new Set(["what", "when", "where", "which", "does", "done", "your", "yours",
+    "have", "this", "that", "they", "them", "there", "here", "much", "many", "with", "from",
+    "into", "about", "year", "town", "towns", "will", "would", "could", "budget", "money", "some"]);
+
   function bestMatch(query) {
     const q = " " + query.toLowerCase().replace(/[^a-z0-9\s]/g, " ") + " ";
     let best = null, bestScore = 0;
@@ -232,13 +238,13 @@
           score += Math.min(3, kw.split(" ").length) + kw.length / 12;
         }
       });
-      // light overlap with the canonical question
-      item.question.toLowerCase().split(/\s+/).forEach((w) => {
-        if (w.length > 3 && q.includes(" " + w + " ")) score += 0.4;
+      // light overlap with the canonical question (filler words excluded)
+      item.question.toLowerCase().replace(/[^a-z0-9\s]/g, " ").split(/\s+/).forEach((w) => {
+        if (w.length > 3 && !STOP.has(w) && q.includes(" " + w + " ")) score += 0.4;
       });
       if (score > bestScore) { bestScore = score; best = item; }
     });
-    return bestScore >= 1 ? best : null;
+    return bestScore >= 1.2 ? best : null;
   }
 
   async function answer(query) {

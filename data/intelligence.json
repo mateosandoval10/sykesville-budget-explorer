@@ -45,7 +45,7 @@
     {
       "id": "biggest_project",
       "question": "What is the Town's biggest project this year?",
-      "keywords": ["biggest project", "largest project", "capital", "main street", "oklahoma", "project"],
+      "keywords": ["biggest project", "largest project", "main street", "oklahoma", "capital project", "biggest investment"],
       "answer": "The $1.2 million Oklahoma Avenue / Main Street improvements — the largest single project in the budget. It's paid for entirely with federal pandemic-recovery funds (ARPA/SLFRF), which must be spent by the end of 2026, so it costs local taxpayers nothing directly.",
       "cites": ["capital_projects"]
     },
