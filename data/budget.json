@@ -1,0 +1,225 @@
+{
+  "meta": {
+    "town": "Town of Sykesville, Maryland",
+    "fiscal_year": "FY2026",
+    "fiscal_period": "July 1, 2025 – June 30, 2026",
+    "status": "Draft budget (dated May 12, 2025)",
+    "currency": "USD",
+    "population": 4316,
+    "households": 1648,
+    "population_source": "U.S. Census Bureau, 2020 Decennial Census",
+    "source": {
+      "document": "Town of Sykesville Annual Budget Document FY 2026 (Draft)",
+      "url": "https://www.townofsykesville.gov/DocumentCenter/View/4477/DRAFT-FY2026-Budget-Book",
+      "primary_table": "Combined Budget Summary, page 16",
+      "retrieved": "2026-06-23"
+    },
+    "data_note": "Top-level revenue and expenditure totals are taken verbatim from the official Combined Budget Summary (p.16). Sub-items decompose those totals using figures stated in the budget narrative (pp.10–15). Where a decomposition does not tie exactly to the summary, a small reconciling line is shown and labeled. Every figure is traceable to the source document."
+  },
+
+  "headline": {
+    "total_budget": 6872516,
+    "prior_year_budget": 8972071,
+    "change_from_prior_year": -2099555,
+    "change_pct": -0.234,
+    "change_reason": "Lower number of capital expenditures this cycle; general operating expenses were relatively flat.",
+    "operating_budget": 4375452,
+    "capital_and_one_time": 2497064,
+    "property_tax_rate": 0.32,
+    "property_tax_rate_unit": "per $100 of assessed value",
+    "property_tax_rate_prior": 0.33,
+    "constant_yield_rate": 0.2996,
+    "assessable_base": 624481697,
+    "long_term_debt": 0,
+    "balanced": true
+  },
+
+  "reserves": {
+    "long_term_debt": 0,
+    "items": [
+      { "name": "Stabilization Reserve", "amount": 1000000, "note": "Fully funded rainy-day reserve." },
+      { "name": "Repaving Reserve", "amount": 250000, "note": "Set aside for road resurfacing." },
+      { "name": "Impact Fees (restricted)", "amount": 225026, "note": "Growth-related fees; $70,000 used in FY26 for a police vehicle." },
+      { "name": "Warfield Public Project Escrow (restricted)", "amount": 184385, "note": "Dedicated to the Warfield redevelopment." },
+      { "name": "Gate House Museum (restricted)", "amount": 76716, "note": "Dedicated to the museum." },
+      { "name": "Parking Reserve (restricted)", "amount": 29026, "note": "Dedicated to parking." }
+    ]
+  },
+
+  "revenues": {
+    "total": 6872516,
+    "categories": [
+      {
+        "key": "property_taxes",
+        "name": "Property Taxes",
+        "amount": 2043341,
+        "recurring": true,
+        "summary_line": "Property Taxes (p.16)",
+        "blurb": "Taxes on the assessed value of land and buildings. The single largest revenue source the Town controls directly.",
+        "children": [
+          { "name": "Real property tax", "amount": 1998341, "note": "Rate of $0.32 per $100 applied to a $624,481,697 assessable base." },
+          { "name": "Other property tax", "amount": 45000, "note": "Reconciling difference between the p.16 summary total and the stated real-property figure." }
+        ]
+      },
+      {
+        "key": "intergovernmental",
+        "name": "Intergovernmental",
+        "amount": 1928575,
+        "recurring": true,
+        "summary_line": "Intergovernmental (p.16)",
+        "blurb": "Money from other governments — the State's income-tax share, police-service compensation, and gas-tax road funding.",
+        "children": [
+          { "name": "Local income tax", "amount": 1244593, "recurring": true, "note": "Town's share of state income tax. Budgeted near the 3-year average; FY24 actual was $1,292,496." },
+          { "name": "State police aid (Town–County Agreement)", "amount": 351918, "recurring": true, "note": "Compensation for police services the Town provides that the State/County would otherwise cover." },
+          { "name": "Highway User Revenue", "amount": 327064, "recurring": true, "note": "State gas-tax and vehicle-fee money, restricted to roads." },
+          { "name": "Other intergovernmental", "amount": 5000, "note": "Reconciling line to the p.16 summary total." }
+        ]
+      },
+      {
+        "key": "other_sources",
+        "name": "Other Sources",
+        "amount": 2677250,
+        "recurring": false,
+        "summary_line": "Other Sources (p.16)",
+        "blurb": "Largely one-time money: federal pandemic-recovery funds, capital grants, and reserves drawn down for specific projects. This bucket is big in FY26 but most of it does not repeat.",
+        "children": [
+          { "name": "Federal Recovery Funds (ARPA / SLFRF)", "amount": 1200000, "recurring": false, "note": "Must be spent by end of 2026. Funds the Oklahoma Ave/Main Street project. Town received $3,115,422 total." },
+          { "name": "Capital grants (reimbursements)", "amount": 960000, "recurring": false, "note": "Strategic Demolition/Community Legacy ($450K), Program Open Space ($150K), State Capital Grant ($200K), Safe Streets 4 All ($160K)." },
+          { "name": "Fund balance & reserves used", "amount": 360000, "recurring": false, "note": "Capital Reserve ($100K), Impact Fees ($70K), Unassigned Fund ($190K for legal fees, transportation planning, zoning rewrite)." },
+          { "name": "Interest income & other", "amount": 157250, "recurring": true, "note": "Largest recurring piece of 'Other'; mainly interest on Town investment accounts." }
+        ]
+      },
+      {
+        "key": "local_program",
+        "name": "Local / Program Revenues",
+        "amount": 95650,
+        "recurring": true,
+        "summary_line": "Local / Program Revenues (p.16)",
+        "blurb": "Revenue from Town programs and local activity."
+      },
+      {
+        "key": "licenses_permits",
+        "name": "Licenses & Permits",
+        "amount": 84000,
+        "recurring": true,
+        "summary_line": "Licenses & Permits (p.16)",
+        "blurb": "Fees for building permits, business licenses, and similar approvals."
+      },
+      {
+        "key": "service_fees",
+        "name": "Service Fees",
+        "amount": 43700,
+        "recurring": true,
+        "summary_line": "Service Fees (p.16)",
+        "blurb": "Charges for specific Town services."
+      }
+    ]
+  },
+
+  "expenditures": {
+    "total": 6872516,
+    "groups": [
+      {
+        "key": "capital_projects",
+        "name": "Capital Projects",
+        "amount": 2497064,
+        "recurring": false,
+        "blurb": "One-time investments in long-lived assets — roads, buildings, equipment — much of it grant- and federally funded this year.",
+        "children": [
+          { "name": "Capital Outlays", "amount": 1297064, "summary_line": "Capital Outlays (p.16)" },
+          { "name": "ARPA / Federal Recovery projects", "amount": 1200000, "summary_line": "ARPA (p.16)" }
+        ]
+      },
+      {
+        "key": "general_government",
+        "name": "General Government & Administration",
+        "amount": 1214489,
+        "recurring": true,
+        "blurb": "Running the Town: staff, legal and engineering services, the Mayor and Council, and citizen commissions.",
+        "children": [
+          { "name": "Administration", "amount": 578939, "summary_line": "Administration (p.16)", "note": "Salaries for six employees (Town Manager, Clerk, Parks & Rec Coordinator, Planner, Admin Assistant, Treasurer) plus Town House utilities." },
+          { "name": "Professional Services", "amount": 490000, "summary_line": "Professional Services (p.16)", "note": "Legal ($200K, largely Warfield litigation), engineering, audit, insurance, and the zoning-ordinance rewrite ($200K). $160K offset by grants." },
+          { "name": "Mayor & Town Council", "amount": 143550, "summary_line": "Mayor & Town Council (p.16)", "note": "Includes the annual donation to the Freedom District Fire Department, raised from $10,000 to $20,000." },
+          { "name": "Town Commissions", "amount": 2000, "summary_line": "Town Commissions (p.16)", "note": "Planning Commission and Historic District Commission training." }
+        ]
+      },
+      {
+        "key": "public_safety",
+        "name": "Public Safety (Police)",
+        "amount": 1015469,
+        "recurring": true,
+        "blurb": "The Sykesville Police Department: ten sworn officers, a Chief, an administrative assistant, plus vehicles, building, and training.",
+        "children": [
+          { "name": "Police Department & Auxiliary", "amount": 1015469, "summary_line": "Public Safety (p.16)" }
+        ]
+      },
+      {
+        "key": "employee_benefits",
+        "name": "Employee Benefits",
+        "amount": 957712,
+        "recurring": true,
+        "blurb": "Town-wide benefits across all departments: health insurance (just over half of this), retirement, disability, workers' comp, and payroll taxes.",
+        "children": [
+          { "name": "Employee Benefits (all departments)", "amount": 957712, "summary_line": "Employee Benefits (p.16)", "note": "Health insurance rose 3.5% from FY25." }
+        ]
+      },
+      {
+        "key": "public_works",
+        "name": "Public Works & Environment",
+        "amount": 793049,
+        "recurring": true,
+        "blurb": "Trash and recycling, snow removal, street lighting, mowing, and stormwater maintenance.",
+        "children": [
+          { "name": "Public Works & Sanitation", "amount": 694549, "summary_line": "Public Works (p.16)", "note": "6.5 employees plus the Director; includes County tipping fees and the Parkside garbage rebate." },
+          { "name": "Streets & Roads", "amount": 98500, "summary_line": "Streets & Roads (p.16)", "note": "Mostly street-lighting utilities and snow-removal costs." }
+        ]
+      },
+      {
+        "key": "culture_heritage",
+        "name": "Culture, Heritage & Community",
+        "amount": 249902,
+        "recurring": true,
+        "blurb": "The things that make Sykesville Sykesville: the Post Office & Visitor Center, the Gate House Museum, and historic buildings.",
+        "children": [
+          { "name": "Post Office & Visitor Center", "amount": 126692, "summary_line": "Post Office & Visitor Center (p.16)", "note": "Three part-time employees; largest cost is pre-paid postage (reimbursed)." },
+          { "name": "Gate House Museum", "amount": 104210, "summary_line": "Gate House Museum (p.16)", "note": "Full-time curator, part-time assistant, utilities, operations." },
+          { "name": "Historic Buildings", "amount": 18750, "summary_line": "Historic Buildings (p.16)", "note": "Historic Black Schoolhouse and Sykesville Station upkeep." },
+          { "name": "Military Memorial Bricks", "amount": 250, "summary_line": "Military Memorial Bricks (p.16)", "note": "Veterans' memorial bricks at the Town House. The usual $50K Downtown Sykesville Connection line is $0 this year — it was advanced for 10 years." }
+        ]
+      },
+      {
+        "key": "parks_recreation",
+        "name": "Parks, Recreation & Open Space",
+        "amount": 144831,
+        "recurring": true,
+        "blurb": "Park upkeep, the splash pad, tree care, and community events like Music in the Park and the Sykesville Cinema series.",
+        "children": [
+          { "name": "Parks Maintenance", "amount": 137831, "summary_line": "Parks Maintenance (p.16)", "note": "Open space, splash pad, tree care, landscaping, Little Sykes, NPDES stormwater permit fee." },
+          { "name": "Parks & Recreation (events)", "amount": 7000, "summary_line": "Parks & Recreation (p.16)", "note": "SPARC events: Sykesville Cinema series, Music in the Park." }
+        ]
+      }
+    ]
+  },
+
+  "capital_projects": [
+    { "name": "Oklahoma Avenue / Main Street Improvements", "amount": 1200000, "category": "Streets & Downtown", "funding": "Federal Recovery Funds (ARPA/SLFRF)" },
+    { "name": "Town House Lawn (engineering & construction)", "amount": 250000, "category": "General Government", "funding": "Strategic Demolition / Community Legacy grant" },
+    { "name": "714 Sandosky Lot (engineering)", "amount": 200000, "category": "General Government", "funding": "Strategic Demolition / Community Legacy grant" },
+    { "name": "B.F. Shriver Cannery — planning (South Branch Park)", "amount": 200000, "category": "Parks", "funding": "State Capital Grant" },
+    { "name": "Cooper Park Improvements", "amount": 150000, "category": "Parks", "funding": "Program Open Space grant" },
+    { "name": "Norwood Avenue Stormwater", "amount": 100000, "category": "Public Works", "funding": "Capital Reserve" },
+    { "name": "Road Resurfacing", "amount": 307064, "category": "Streets & Roads", "funding": "Highway User Revenue" },
+    { "name": "New Police Cruiser", "amount": 70000, "category": "Public Safety", "funding": "Impact Fees" },
+    { "name": "Sidewalks", "amount": 20000, "category": "Streets & Roads", "funding": "Highway User Revenue" }
+  ],
+
+  "facts": [
+    "The Town carries zero long-term debt.",
+    "The property tax rate held steady at $0.32 per $100 after a 1-cent cut in FY2025.",
+    "At $0.32, the rate sits just above the Constant Yield Rate of $0.2996 — meaning the Town collects modestly more than 'no real increase'.",
+    "The Stabilization (rainy-day) Reserve is fully funded at $1,000,000.",
+    "FY2026 spending is down 23% from FY2025, almost entirely because fewer big capital projects are scheduled.",
+    "The largest single project — the $1.2M Oklahoma Ave/Main Street improvements — is paid for with federal pandemic-recovery funds that must be spent by the end of 2026.",
+    "More than $800,000 of FY2026 capital work is grant-funded, reducing the burden on local taxpayers."
+  ]
+}

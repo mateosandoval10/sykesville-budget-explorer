@@ -1,0 +1,141 @@
+{
+  "_meta": {
+    "description": "Claude-generated 'intelligence layer' for the Sykesville Budget Explorer. Plain-English narratives and a library of answered resident questions, all grounded in data/budget.json. Generated once at build time so the deployed tool answers instantly and free, with no API calls.",
+    "grounding": "Every figure quoted here comes from data/budget.json, which is parsed from the Town's official FY2026 budget document.",
+    "generated_by": "Claude (build-time generation)"
+  },
+
+  "narratives": {
+    "overview": "Sykesville's FY2026 budget is $6.87 million — balanced, with zero long-term debt. That's about $1,592 for every resident, though roughly a third of the total is one-time capital and federal money that won't repeat. Day-to-day operations run about $4.38 million, or $1,014 per resident.",
+    "year_over_year": "The budget fell 23% from last year — a $2.1 million drop. Almost none of that is cuts to services: general operations were essentially flat. The decline is because FY2025 had an unusually heavy slate of capital projects, and FY2026 has fewer. Think of it like a year where you're not replacing the roof and the car at the same time.",
+    "where_money_comes_from": "Property taxes ($2.04M, ~30%) are the largest source the Town controls directly. Money from other governments ($1.93M) — the income-tax share, police-service aid, and gas-tax road money — is nearly as large. The biggest single bucket, 'Other Sources' ($2.68M), is mostly one-time: federal pandemic-recovery dollars, capital grants, and reserves drawn down for specific projects.",
+    "where_money_goes": "If you set aside the one-time capital projects ($2.5M), the Town's everyday spending is led by general government and administration ($1.21M), police ($1.02M), and town-wide employee benefits ($0.96M). Public works and sanitation ($0.79M) covers trash, recycling, snow, and stormwater. Parks, culture, and heritage together are a smaller but visible slice.",
+    "taxes_and_reserves": "The property tax rate is $0.32 per $100 of assessed value — unchanged after a 1-cent cut the year before. It sits just above the state's Constant Yield Rate of $0.2996, so the Town collects a little more than 'no real increase.' On the savings side, Sykesville is in strong shape: a fully funded $1 million rainy-day reserve, a $250,000 repaving reserve, and no long-term debt at all."
+  },
+
+  "faq": [
+    {
+      "id": "police_vs_parks",
+      "question": "How much does the Town spend on police vs. parks?",
+      "keywords": ["police", "parks", "compare", "versus", "vs", "recreation", "safety", "park"],
+      "answer": "Police: $1,015,469. Parks, recreation, and open space: $144,831. The Town spends roughly seven times as much on police as on parks. Police is about 15% of the whole budget; parks is about 2%. (Police funds ten sworn officers, a Chief, and an administrative assistant.)",
+      "cites": ["public_safety", "parks_recreation"]
+    },
+    {
+      "id": "where_from",
+      "question": "Where does the Town's money come from?",
+      "keywords": ["revenue", "money come from", "income", "funded", "sources", "where does the money", "fund"],
+      "answer": "The biggest sources are property taxes ($2.04M, ~30%) and money from other governments ($1.93M) — the income-tax share, police aid, and gas-tax road funds. A large one-time bucket called 'Other Sources' ($2.68M) holds federal recovery funds, capital grants, and reserves used for specific projects. Smaller pieces come from licenses & permits ($84K), local program revenue ($96K), and service fees ($44K).",
+      "cites": ["property_taxes", "intergovernmental", "other_sources"]
+    },
+    {
+      "id": "why_down",
+      "question": "Why did the budget go down this year?",
+      "keywords": ["down", "decrease", "smaller", "lower", "drop", "23%", "less", "fell", "cut"],
+      "answer": "The budget dropped 23% — about $2.1 million — from FY2025. It's not service cuts: everyday operating costs were basically flat. FY2025 simply had a much heavier load of one-time capital projects, and FY2026 has fewer of them.",
+      "cites": ["capital_projects"]
+    },
+    {
+      "id": "taxes_up",
+      "question": "Did my property taxes go up? What is the rate?",
+      "keywords": ["property tax", "rate", "go up", "increase", "0.32", "taxes up", "higher", "raised", "constant yield"],
+      "answer": "The town property tax rate is $0.32 per $100 of assessed value, unchanged this year (it was cut by 1 cent the year before). Your bill could still rise if your assessment went up, since Maryland phases in new assessments over three years. The rate is slightly above the state's Constant Yield Rate of $0.2996 — the rate that would raise the same total dollars as last year — so the Town collects modestly more than a true 'no increase.'",
+      "cites": ["property_taxes"]
+    },
+    {
+      "id": "biggest_project",
+      "question": "What is the Town's biggest project this year?",
+      "keywords": ["biggest project", "largest project", "capital", "main street", "oklahoma", "project"],
+      "answer": "The $1.2 million Oklahoma Avenue / Main Street improvements — the largest single project in the budget. It's paid for entirely with federal pandemic-recovery funds (ARPA/SLFRF), which must be spent by the end of 2026, so it costs local taxpayers nothing directly.",
+      "cites": ["capital_projects"]
+    },
+    {
+      "id": "debt",
+      "question": "Does Sykesville have any debt?",
+      "keywords": ["debt", "owe", "loan", "borrow", "bond", "long-term debt"],
+      "answer": "No. The Town carries zero long-term debt. It also keeps strong reserves: a fully funded $1,000,000 stabilization (rainy-day) reserve and a $250,000 repaving reserve, among other restricted accounts.",
+      "cites": ["reserves"]
+    },
+    {
+      "id": "per_resident",
+      "question": "How much does the Town spend per resident?",
+      "keywords": ["per resident", "per person", "per capita", "each person", "per household", "my share"],
+      "answer": "The $6.87M total budget works out to about $1,592 per resident (Sykesville's population is 4,316). But about a third is one-time capital and federal money. The Town's recurring, day-to-day operating budget of $4.38M is about $1,014 per resident, or roughly $2,655 per household.",
+      "cites": []
+    },
+    {
+      "id": "tax_dollar",
+      "question": "What does the Town do with my property tax money?",
+      "keywords": ["my tax", "tax dollar", "spent on", "what do they do", "services", "where do my taxes go"],
+      "answer": "Property taxes ($2.04M) flow into the General Fund and help pay for everyday services. Across the whole budget, the largest everyday areas are general government and administration, police, employee benefits, and public works (trash, recycling, snow, stormwater). Use the 'Where does my tax dollar go?' calculator to see your personal share by service.",
+      "cites": ["property_taxes", "public_safety", "public_works"]
+    },
+    {
+      "id": "arpa",
+      "question": "What is ARPA money and what's it being used for?",
+      "keywords": ["arpa", "federal", "slfrf", "recovery", "stimulus", "pandemic", "covid"],
+      "answer": "ARPA / SLFRF are federal State and Local Fiscal Recovery Funds from the pandemic. Sykesville received $3,115,422 total and must spend it by the end of 2026. In FY2026, $1,200,000 is allocated to the Oklahoma Avenue / Main Street improvements. Over $1.9M was already spent in FY2023–2025.",
+      "cites": ["other_sources", "capital_projects"]
+    },
+    {
+      "id": "trash",
+      "question": "How much does trash and public works cost?",
+      "keywords": ["trash", "garbage", "recycling", "public works", "sanitation", "snow", "refuse", "stormwater"],
+      "answer": "Public Works & Sanitation is $694,549 — trash and recycling pickup, mowing, stormwater maintenance, County tipping fees, and the Parkside garbage rebate, run by 6.5 employees plus the Director. A separate Streets & Roads line ($98,500) covers street lighting and snow removal.",
+      "cites": ["public_works"]
+    },
+    {
+      "id": "reserves",
+      "question": "Does the Town have savings or reserves?",
+      "keywords": ["reserves", "savings", "rainy day", "stabilization", "fund balance", "cushion"],
+      "answer": "Yes, and they're healthy. A fully funded $1,000,000 stabilization (rainy-day) reserve, a $250,000 repaving reserve, plus restricted accounts: impact fees ($225,026), the Warfield escrow ($184,385), the Gate House Museum ($76,716), and a parking reserve ($29,026) — all with zero long-term debt.",
+      "cites": ["reserves"]
+    },
+    {
+      "id": "fire_department",
+      "question": "Does the Town fund the fire department?",
+      "keywords": ["fire", "fire department", "freedom district", "ems", "donation"],
+      "answer": "Yes — the Town's annual donation to the Freedom District Fire Department was doubled from $10,000 to $20,000 this year. It's included in the Mayor & Town Council category.",
+      "cites": ["general_government"]
+    },
+    {
+      "id": "other_sources_big",
+      "question": "Why is 'Other Sources' so large?",
+      "keywords": ["other sources", "other revenue", "what is other", "39%", "big bucket"],
+      "answer": "'Other Sources' ($2.68M, ~39% of revenue) looks large because it bundles mostly one-time money: federal recovery funds ($1.2M), capital grants ($960K), reserves drawn down for projects ($360K), and interest income ($157K). Almost none of it is recurring — it's there to fund this year's specific projects, not ongoing operations.",
+      "cites": ["other_sources"]
+    },
+    {
+      "id": "police_count",
+      "question": "How many police officers does the Town have?",
+      "keywords": ["how many police", "officers", "police department", "cops", "chief"],
+      "answer": "The Sykesville Police Department is funded for ten sworn officers, one Chief of Police, and one administrative assistant. The department's total budget is $1,015,469, which also covers vehicles, building and vehicle maintenance, utilities, and training. A new police cruiser ($70,000) is funded from impact fees.",
+      "cites": ["public_safety", "capital_projects"]
+    },
+    {
+      "id": "biggest_expense",
+      "question": "What's the Town's biggest expense?",
+      "keywords": ["biggest expense", "largest expense", "most money", "biggest spending", "spend the most"],
+      "answer": "Counting one-time projects, Capital Projects ($2.5M) is the largest. Among everyday operations, the biggest areas are General Government & Administration ($1.21M), Police ($1.02M), and town-wide Employee Benefits ($0.96M, just over half of which is health insurance).",
+      "cites": ["capital_projects", "general_government", "public_safety", "employee_benefits"]
+    },
+    {
+      "id": "grants",
+      "question": "How much of the budget is grant-funded?",
+      "keywords": ["grants", "grant funded", "free money", "outside funding", "state money"],
+      "answer": "More than $800,000 of FY2026 capital work is grant-funded, plus the $1.2M federal recovery project — so a large share of this year's investment doesn't fall on local taxpayers. Grants include Strategic Demolition/Community Legacy ($450K), Program Open Space ($150K), a State Capital Grant ($200K), and Safe Streets 4 All ($160K).",
+      "cites": ["other_sources", "capital_projects"]
+    }
+  ],
+
+  "suggested_questions": [
+    "How much does the Town spend on police vs. parks?",
+    "Where does the Town's money come from?",
+    "Did my property taxes go up?",
+    "Why did the budget go down this year?",
+    "What is the Town's biggest project this year?",
+    "Does Sykesville have any debt?",
+    "How much does the Town spend per resident?",
+    "What is ARPA money being used for?"
+  ]
+}

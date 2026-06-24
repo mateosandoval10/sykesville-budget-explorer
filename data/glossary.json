@@ -1,0 +1,117 @@
+{
+  "_meta": {
+    "description": "Plain-English explainers for common Maryland municipal-budget terms. Powers the 'what does this mean?' tooltips in the Sykesville Budget Explorer. Written to be read by a resident with no finance background.",
+    "audience": "Sykesville residents, no finance background assumed",
+    "source_note": "Definitions reflect Maryland municipal finance conventions (fiscal year runs July 1 – June 30; tax rates expressed per $100 of assessed value)."
+  },
+  "terms": {
+    "general_fund": {
+      "term": "General Fund",
+      "plain_english": "The town's main checking account. Almost all day-to-day money — taxes in, salaries and services out — flows through here.",
+      "why_it_matters": "When people say 'the town budget,' they usually mean the General Fund. It's where your property tax dollars land and get spent.",
+      "analogy": "Like your household checking account, as opposed to a special savings jar set aside for one purpose."
+    },
+    "enterprise_fund": {
+      "term": "Enterprise Fund (Water & Sewer)",
+      "plain_english": "A separate account for a service that pays for itself through user fees rather than taxes — most commonly water and sewer.",
+      "why_it_matters": "Your water bill funds this, not your property tax. It's kept separate so the town can see whether the utility covers its own costs.",
+      "analogy": "Like running a small business inside the government: the water system is supposed to break even on the fees it charges."
+    },
+    "fund_balance": {
+      "term": "Fund Balance",
+      "plain_english": "Money the town has saved up and not yet spent — its reserves or rainy-day savings.",
+      "why_it_matters": "A healthy fund balance means the town can absorb emergencies (a snowstorm, a broken water main) without scrambling. Rating agencies and residents both watch it.",
+      "analogy": "Your emergency savings account. A common guideline is keeping several months of expenses on hand."
+    },
+    "unassigned_fund_balance": {
+      "term": "Unassigned Fund Balance",
+      "plain_english": "The portion of savings not already promised to a specific purpose — the most flexible reserve money.",
+      "why_it_matters": "This is what the town can actually tap in a pinch. It's the truest measure of financial cushion.",
+      "analogy": "The part of your savings that isn't already earmarked for the car payment or the vacation."
+    },
+    "operating_budget": {
+      "term": "Operating Budget",
+      "plain_english": "The plan for ongoing, year-to-year costs: salaries, fuel, electricity, supplies, routine maintenance.",
+      "why_it_matters": "This is the recurring cost of keeping the lights on and the services running. It repeats every year.",
+      "analogy": "Your monthly bills — rent, groceries, utilities — as opposed to a one-time big purchase."
+    },
+    "capital_budget": {
+      "term": "Capital Budget (CIP)",
+      "plain_english": "Money for big, long-lasting investments — a new fire truck, repaving a road, a park renovation. The 'CIP' is the Capital Improvement Program, the multi-year plan for these projects.",
+      "why_it_matters": "Capital spending is lumpy and often borrowed for, so it's tracked separately from everyday costs.",
+      "analogy": "Buying a car or replacing your roof — a one-time investment that lasts for years, not a monthly bill."
+    },
+    "debt_service": {
+      "term": "Debt Service",
+      "plain_english": "The yearly payments — principal plus interest — the town makes on money it borrowed, usually for big capital projects.",
+      "why_it_matters": "Like a mortgage payment, it's a fixed obligation that comes before discretionary spending. High debt service leaves less room for everything else.",
+      "analogy": "Your monthly mortgage or car-loan payment."
+    },
+    "property_tax": {
+      "term": "Property Tax (Real Property Tax)",
+      "plain_english": "A tax based on the assessed value of land and buildings you own. In Maryland it's expressed as a rate per $100 of assessed value.",
+      "why_it_matters": "It's typically the single largest source of money a town controls directly, and the one most visible to homeowners.",
+      "analogy": "If your home is assessed at $300,000 and the town rate is $0.33 per $100, you'd owe about $990 in town property tax (300,000 ÷ 100 × 0.33)."
+    },
+    "income_tax": {
+      "term": "Local Income Tax ('Piggyback' Tax)",
+      "plain_english": "A share of the state income tax that Maryland returns to local governments based on where residents live.",
+      "why_it_matters": "It rises and falls with residents' earnings, so it's a big but less predictable revenue source than property tax.",
+      "analogy": "A slice of the income tax you already pay the state gets routed back to fund your local services."
+    },
+    "highway_user_revenue": {
+      "term": "Highway User Revenue",
+      "plain_english": "State money — funded mainly by the gas tax and vehicle fees — sent back to towns specifically to maintain local roads.",
+      "why_it_matters": "It's earmarked for streets and transportation. When the state cuts it, towns feel it in their road-repair budgets.",
+      "analogy": "A dedicated allowance from the state that can only be spent on roads."
+    },
+    "recordation_tax": {
+      "term": "Recordation Tax",
+      "plain_english": "A tax charged when real-estate documents — deeds and mortgages — are officially recorded, usually when a property is bought or refinanced.",
+      "why_it_matters": "It tracks the housing market: strong when homes are selling, weak when the market slows. That makes it volatile.",
+      "analogy": "A fee collected at the closing table when a house changes hands."
+    },
+    "admissions_amusement_tax": {
+      "term": "Admissions & Amusement Tax",
+      "plain_english": "A small tax on the price of certain entertainment — event tickets, recreation, some amusements.",
+      "why_it_matters": "A minor but steady revenue source tied to local entertainment activity.",
+      "analogy": "A few cents on the dollar added to a ticket or recreation fee."
+    },
+    "intergovernmental_revenue": {
+      "term": "Intergovernmental Revenue (Grants)",
+      "plain_english": "Money the town receives from other governments — state or federal grants and shared taxes.",
+      "why_it_matters": "It lets a small town fund projects it couldn't afford alone, but it often comes with strings attached and can disappear when the grant ends.",
+      "analogy": "A matching gift or scholarship: helpful, but you can't count on it forever."
+    },
+    "assessed_value": {
+      "term": "Assessed Value",
+      "plain_english": "The dollar value the state assigns to your property for tax purposes. Maryland reassesses every property on a three-year cycle.",
+      "why_it_matters": "Your tax bill = assessed value × the tax rate. When assessments rise, bills can rise even if the rate stays flat.",
+      "analogy": "The 'sticker price' the state puts on your property; the tax rate is the percentage applied to it."
+    },
+    "constant_yield_tax_rate": {
+      "term": "Constant Yield Tax Rate",
+      "plain_english": "The tax rate that would raise the same total dollars as last year, even though assessments changed. Maryland requires towns to publicize when they exceed it.",
+      "why_it_matters": "If the town keeps the old rate while assessments rise, it collects more money — effectively a tax increase. The constant yield rate is the honest baseline for comparison.",
+      "analogy": "The 'no real increase' rate. Charging above it means residents pay more in total, even if the headline rate didn't move."
+    },
+    "fiscal_year": {
+      "term": "Fiscal Year (FY)",
+      "plain_english": "The town's 12-month budgeting year. In Maryland it runs July 1 through June 30. 'FY2026' means July 1, 2025 – June 30, 2026.",
+      "why_it_matters": "Budgets, audits, and comparisons are all organized around this window, not the calendar year.",
+      "analogy": "Like a school year that starts in fall and ends in spring — a yearly cycle that doesn't line up with January–December."
+    },
+    "general_obligation_bond": {
+      "term": "General Obligation (G.O.) Bond",
+      "plain_english": "A loan the town takes out by selling bonds to investors, backed by its full taxing power, usually to pay for major capital projects.",
+      "why_it_matters": "It spreads the cost of a big, long-lived asset over the years that residents will use it — but it commits the town to years of debt-service payments.",
+      "analogy": "Taking out a mortgage to buy a house instead of paying the whole price up front."
+    },
+    "balanced_budget": {
+      "term": "Balanced Budget",
+      "plain_english": "A budget where planned spending does not exceed expected revenue plus any savings the town chooses to use.",
+      "why_it_matters": "Maryland local governments are generally required to adopt balanced budgets — they can't plan to spend money they don't have.",
+      "analogy": "Not planning to spend more than you bring in, unless you're deliberately dipping into savings."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Local server logs
+*.log
+
+# Derived output (regenerate with scripts/extract_budget.py)
+data/budget.summary.json
+data/raw/sykesville-budget.txt

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sykesville Budget Explorer — FY2026</title>
+  <meta name="description" content="An interactive, plain-English look at where the Town of Sykesville's money comes from and where it goes — built from the official FY2026 budget." />
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;🏛️&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">🏛️</span>
+        <div>
+          <h1>Sykesville Budget Explorer</h1>
+          <p class="brand-sub">Where your town's money comes from — and where it goes. Fiscal Year 2026.</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="badge" id="status-badge">Loading…</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="wrap">
+
+    <!-- HERO STATS -->
+    <section class="hero" aria-labelledby="hero-h">
+      <h2 id="hero-h" class="visually-hidden">Budget at a glance</h2>
+      <div class="stat-grid" id="stat-grid"><!-- stats injected --></div>
+      <p class="hero-note" id="hero-note"></p>
+    </section>
+
+    <!-- ASK THE BUDGET -->
+    <section class="card ask-card" aria-labelledby="ask-h">
+      <div class="ask-head">
+        <h2 id="ask-h">💬 Ask the Budget</h2>
+        <button class="live-toggle" id="live-toggle" type="button" aria-expanded="false" title="Use your own Anthropic API key for live AI answers">🔑 Live AI: off</button>
+      </div>
+      <p class="muted">Type a question in plain English. Answers come from the official budget — instantly and free.</p>
+      <form id="ask-form" class="ask-form" autocomplete="off">
+        <input id="ask-input" type="text" placeholder="e.g. How much do we spend on police vs. parks?" aria-label="Ask a question about the budget" />
+        <button type="submit">Ask</button>
+      </form>
+      <div id="live-panel" class="live-panel" hidden>
+        <label for="api-key">Your Anthropic API key (used only in your browser, never stored or sent anywhere else):</label>
+        <input id="api-key" type="password" placeholder="sk-ant-…" autocomplete="off" />
+        <p class="micro">Leave this off to use the free, pre-built answers. With a key, questions are answered live by Claude, grounded in this budget. <a href="https://console.anthropic.com/" target="_blank" rel="noopener">Get a key →</a></p>
+      </div>
+      <div id="ask-answer" class="ask-answer" hidden></div>
+      <div id="ask-suggestions" class="suggestions"><!-- chips injected --></div>
+    </section>
+
+    <!-- REVENUE -->
+    <section class="card" aria-labelledby="rev-h">
+      <h2 id="rev-h">Where the money comes from</h2>
+      <p class="muted">Total revenue: <strong id="rev-total"></strong>. Click any slice to break it down.</p>
+      <div class="breakdown">
+        <div class="donut-wrap"><div id="rev-donut" class="donut" role="img" aria-label="Revenue breakdown chart"></div></div>
+        <div id="rev-legend" class="legend"><!-- legend injected --></div>
+      </div>
+      <div id="rev-detail" class="detail" hidden></div>
+    </section>
+
+    <!-- EXPENDITURE -->
+    <section class="card" aria-labelledby="exp-h">
+      <h2 id="exp-h">Where the money goes</h2>
+      <p class="muted">Total spending: <strong id="exp-total"></strong>. Click any slice to see the departments inside it.</p>
+      <div class="breakdown">
+        <div class="donut-wrap"><div id="exp-donut" class="donut" role="img" aria-label="Spending breakdown chart"></div></div>
+        <div id="exp-legend" class="legend"><!-- legend injected --></div>
+      </div>
+      <div id="exp-detail" class="detail" hidden></div>
+    </section>
+
+    <!-- TAX CALCULATOR -->
+    <section class="card calc-card" aria-labelledby="calc-h">
+      <h2 id="calc-h">Where does <em>my</em> tax dollar go?</h2>
+      <p class="muted">Enter your home's assessed value to see your town property tax and how it splits across services.</p>
+      <form id="calc-form" class="calc-form" autocomplete="off">
+        <label for="home-value">Assessed home value</label>
+        <div class="input-money">
+          <span>$</span>
+          <input id="home-value" type="text" inputmode="numeric" value="400,000" aria-label="Assessed home value in dollars" />
+        </div>
+        <button type="submit">Calculate</button>
+      </form>
+      <div id="calc-result" class="calc-result"><!-- result injected --></div>
+    </section>
+
+    <!-- CAPITAL PROJECTS -->
+    <section class="card" aria-labelledby="cap-h">
+      <h2 id="cap-h">Major projects this year</h2>
+      <p class="muted">The Town's one-time capital investments — and who's paying for each.</p>
+      <div id="cap-list" class="cap-list"><!-- projects injected --></div>
+    </section>
+
+    <!-- RESERVES -->
+    <section class="card" aria-labelledby="res-h">
+      <h2 id="res-h">Reserves &amp; financial health</h2>
+      <div id="res-content" class="res-content"><!-- reserves injected --></div>
+    </section>
+
+    <!-- FACTS -->
+    <section class="card facts-card" aria-labelledby="facts-h">
+      <h2 id="facts-h">Good to know</h2>
+      <ul id="facts-list" class="facts-list"><!-- facts injected --></ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Data source:</strong> <a id="source-link" href="#" target="_blank" rel="noopener">Town of Sykesville FY2026 Annual Budget Document</a>. Every figure traces to the official document. This is a draft budget; figures may change on adoption.</p>
+      <p class="micro">Built as an independent civic-transparency project. Not an official Town of Sykesville website. No tracking, no accounts, no data collected. Plain-English explanations are AI-generated and explain — never invent — the official numbers.</p>
+    </div>
+  </footer>
+
+  <!-- Glossary tooltip element -->
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
