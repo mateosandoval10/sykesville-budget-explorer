@@ -2,7 +2,7 @@
 
 **An interactive, plain-English tool that shows residents of Sykesville, Maryland where their town's money comes from and where it goes — built from the Town's official FY2026 budget.**
 
-> 🔗 **Live demo:** _add your GitHub Pages URL here after deploying (see [Deploy](#deploy))_
+> 🔗 **Live demo:** **https://mateosandoval10.github.io/sykesville-budget-explorer/**
 > 📄 **Data source:** [Town of Sykesville FY2026 Annual Budget Document](https://www.townofsykesville.gov/DocumentCenter/View/4477/DRAFT-FY2026-Budget-Book)
 
 ---
