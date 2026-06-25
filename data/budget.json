@@ -238,6 +238,9 @@
     "council": ["Mark Dyer", "Alan Grasley", "Elizabeth Guroff", "Leo Keenan", "Jeremiah Schofield"],
     "town_manager": "Joe Cosentini",
     "website": "https://www.townofsykesville.gov",
+    "phone": "410-795-8959",
+    "address": "7547 Main Street, Sykesville, MD 21784",
+    "hours": "Mon–Fri, 8am–4pm",
     "how_adopted": "The budget is proposed by the Town Manager and adopted by the Mayor and Town Council by ordinance, after public meetings where residents can comment.",
     "engagement": "Town budgets are reviewed and adopted each spring. Check the Town website for the current meeting schedule and how to share your views before the budget is finalized."
   },

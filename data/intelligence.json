@@ -20,6 +20,13 @@
     "The Town has no long-term debt and a fully funded $1 million rainy-day reserve."
   ],
 
+  "health_check": [
+    { "status": "good", "label": "The budget is balanced", "detail": "The Town plans to spend exactly what it takes in — no deficit." },
+    { "status": "good", "label": "No long-term debt", "detail": "Sykesville owes nothing on loans or bonds, so no tax money goes to interest." },
+    { "status": "good", "label": "Rainy-day fund is full", "detail": "A $1 million reserve is set aside for emergencies and to keep the Town stable." },
+    { "status": "good", "label": "Planned conservatively", "detail": "Income is budgeted below recent actual collections, leaving a cushion if the economy dips." }
+  ],
+
   "services": [
     { "icon": "🚓", "name": "Police & public safety", "group_key": "public_safety", "detail": "Sykesville's own department — ten officers, a chief, and an admin." },
     { "icon": "🗑️", "name": "Trash, streets & public works", "group_key": "public_works", "detail": "Weekly curbside trash and recycling, road repair, snow, and stormwater." },

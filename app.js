@@ -87,6 +87,7 @@
 
     renderHero();
     renderSummary();
+    renderHealth();
     renderBreakdown("rev", b.revenues.categories, b.revenues.total, "revenue");
     renderBreakdown("exp", b.expenditures.groups, b.expenditures.total, "spending");
     renderServices();
@@ -111,16 +112,40 @@
     s.forEach((x) => ul.appendChild(el("li", null, escapeHtml(x))));
   }
 
+  /* ---------- financial health check ---------- */
+  function renderHealth() {
+    const items = DATA.intelligence.health_check;
+    if (!items) return;
+    const wrap = $("#health-list");
+    wrap.innerHTML = "";
+    items.forEach((it) => {
+      const ok = it.status === "good";
+      const row = el("div", "health-row " + (ok ? "ok" : "watch"));
+      row.innerHTML =
+        `<span class="health-icon" aria-hidden="true">${ok ? "✅" : "⚠️"}</span>` +
+        `<div><div class="health-label">${escapeHtml(it.label)}</div>` +
+        `<div class="health-detail">${escapeHtml(it.detail)}</div></div>`;
+      wrap.appendChild(row);
+    });
+  }
+
   /* ---------- have your say (civic engagement) ---------- */
   function renderCivic() {
     const g = DATA.budget.town_government;
     if (!g) return;
     const council = [escapeHtml(g.council_president) + " (President)"].concat(g.council.map(escapeHtml)).join(", ");
+    const tel = (g.phone || "").replace(/[^0-9]/g, "");
+    const contact =
+      `<div class="civic-contact">` +
+      (g.phone ? `<a class="civic-btn" href="tel:${tel}">📞 Call the Town: ${escapeHtml(g.phone)}</a>` : "") +
+      `<a class="civic-btn civic-btn-alt" href="${escapeHtml(g.website)}" target="_blank" rel="noopener">Visit the Town website →</a>` +
+      `</div>` +
+      (g.address ? `<p class="micro" style="margin:12px 0 0">🏛️ ${escapeHtml(g.address)} · ${escapeHtml(g.hours || "")}</p>` : "");
     $("#civic-content").innerHTML =
       `<p>${escapeHtml(g.how_adopted)}</p>` +
       `<p><strong>Your elected officials:</strong> Mayor ${escapeHtml(g.mayor)}; Council: ${council}.</p>` +
       `<p class="muted" style="margin-bottom:16px">${escapeHtml(g.engagement)}</p>` +
-      `<a class="civic-btn" href="${escapeHtml(g.website)}" target="_blank" rel="noopener">Visit the Town website →</a>`;
+      contact;
   }
 
   /* ---------- services you use ---------- */
@@ -469,10 +494,13 @@
     });
 
     out.innerHTML =
-      `<p class="calc-headline">Your annual <em>town</em> property tax: <strong>${fmtMoney(townTax)}</strong></p>` +
-      `<p class="calc-sub">That's ${fmtMoney(townTax / 12)} a month — $${rate.toFixed(2)} per $100 of your $${assessed.toLocaleString()} assessment. Here's how it splits across town services:</p>` +
+      `<div class="calc-big">` +
+      `<div class="calc-big-num">${fmtMoney(townTax)}<span>/year</span></div>` +
+      `<div class="calc-big-num alt">${fmtMoney(townTax / 12)}<span>/month</span></div>` +
+      `</div>` +
+      `<p class="calc-sub">That's your household's share of <strong>everything the Town does</strong> — police, trash, roads, parks, and more — at $${rate.toFixed(2)} per $100 of your $${assessed.toLocaleString()} assessment. Here's how it splits:</p>` +
       bars +
-      `<p class="bar-note" style="margin-top:14px">Note: this is only the <strong>Town</strong> portion. Most of your total property-tax bill goes to Carroll County and the State of Maryland, which set their own separate rates.</p>`;
+      `<p class="bar-note" style="margin-top:14px">This is only the <strong>Town</strong> portion. Most of your total property-tax bill goes to Carroll County and the State of Maryland, which set their own separate rates.</p>`;
   }
   function fmtMoney(n) { return "$" + n.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 
